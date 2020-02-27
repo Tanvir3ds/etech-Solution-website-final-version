@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>eTech Solution Limited</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top header-transparent">
+        <div class="container">
+
+            <div class="logo float-left">
+                <h1 class="text-light"><a href="/"><span>eTech </span></a></h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+
+            <nav class="nav-menu float-right d-none d-lg-block">
+                
+                <ul>
+
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'services' %}">Services</a></li>
+
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li class="drop-down"><a href="">Others</a>
+                        <ul>
+
+                            <li class="drop-down"><a href="#">Other1</a>
+                            <li class="drop-down"><a href="#">Other2</a>
+                            <li class="drop-down"><a href="#">Other3</a>
+
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav><!-- .nav-menu -->
+
+        </div>
+    </header><!-- End Header -->
+
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'services' %}">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'blog' %}">Blog</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="{% url 'contact' %}">Contact</a></li>
+
+
+                        </ul>
+                    </div>
+
+                    
+
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            1301 S Scott street <br>
+                            ARLINGTON Virginia 22204<br>
+                            United States <br>
+                            <strong>Phone:</strong> +1 571 524 9138<br>
+                        </p>
+                        <p>
+                            4-B, Level-3,Concept Tower,68-69, <br>
+                            
+                            Green Road Dhanmondi,<br>
+                            Dhaka-1205,Bangladesh <br>
+                            <strong>Phone:</strong> +88 02 9641156<br><br>
+                            <strong>Email:</strong> info@etechbd.net<br>
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>About eTech</h3>
+                        <p class="text-justify">E-Tech Solutions Ltd is IT Services Company that cost-effectively
+                            provides cutting-edge IT Services, focuses on developing innovative software solutions,
+                            offering management and testing services to its clients.</p>
+                        <div class="social-links mt-3">
+                            <a href="https://twitter.com/info2etech" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="https://www.facebook.com/etechsolutionltd/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>eTech Solution</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+                  Designed by <a href="/">eTech Solution Limited</a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+    <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
