@@ -1,8 +1,11 @@
-from django.shortcuts import render, redirect, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse, get_object_or_404
 from . models import HomeCarousel
 from . models import HomeAbout
-from . models import HomePartner
+from . models import HomePartner,HomeClient
 from . models import HomeServices
+from . models import Services
+from . models import BlogCategory,Blog,MessageClient
+from django.db.models import Q
 
 # Create your views here.
 
@@ -11,20 +14,74 @@ def home(request):
     homeabouts = HomeAbout.objects.all()
     homepartners = HomePartner.objects.all()
     homeservices = HomeServices.objects.all()
+    homeclients = HomeClient.objects.all()
+    
 
-    return render(request, "index.html", {'homecarousels':homecarousels, 'homeabouts':homeabouts, 'homepartners':homepartners, 'homeservices':homeservices})  
+    return render(request, "index.html", {'homecarousels':homecarousels, 'homeabouts':homeabouts, 'homepartners':homepartners, 'homeservices':homeservices, 'homeclients':homeclients})  
 
 def about(request):
     return render(request, "about.html",)
 
 
+#Services
 def services(request):
-    return render(request, "service.html",)
+    services = Services.objects.all()
+
+
+    return render(request, "service.html", {'services':services})
 
 
 def blog(request):
-    return render(request, "blog.html",)
+    categorys= BlogCategory.objects.all()
+    blogs=Blog.objects.all().order_by('-id') # latest
+    recentblogs=Blog.objects.all().order_by('-id')[:5] 
+    search =request.GET.get('q')
+    if search:
+        blogs=blogs.filter(
+            Q(title__icontains=search)|
+            Q(description__icontains=search)
+        )
+
+
+    
+    return render(request, "blog.html",{'categorys':categorys, 'blogs':blogs, 'recentblogs':recentblogs})
 
 
 def contact(request):
     return render(request, "contact.html",)
+
+
+
+
+def blogview(request, id):
+    
+    blog=Blog.objects.get(pk=id)
+
+    
+    return render(request, "singleblog.html",{'blog':blog})
+
+def getCategory(request):
+
+    blogs=Blog.objects.all
+
+    return render(request, "categorypost.html",{'blogs':blogs} )
+
+
+def ClientMessage(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+
+        messagesclient= MessageClient(Name= name, Email=email, Subject=subject, Message=message)
+        messagesclient.save()
+        return redirect ('home')
+        
+    else:
+        return redirect ('home')
+        
+        
+        
+    return render(request, "contact.html",)
+

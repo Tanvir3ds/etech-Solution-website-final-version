@@ -11,8 +11,9 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-    <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+    
+    <link href="../static/assets/img/logo final etech.png" rel="icon">
+    
 
     <!-- Google Fonts -->
     <link
@@ -41,13 +42,15 @@
         <div class="container">
 
             <div class="logo float-left">
-                <h1 class="text-light"><a href="/"><span>eTech </span></a></h1>
+                <a href="/">
+                    <img src="{% static 'assets/img/logo final etech.png' %}"  >
+                </a>
                 <!-- Uncomment below if you prefer to use an image logo -->
                 <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             </div>
 
             <nav class="nav-menu float-right d-none d-lg-block">
-                
+
                 <ul>
 
                     <li><a href="{% url 'about' %}">About</a></li>
@@ -90,7 +93,7 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-4 col-md-6 footer-links">
+                    <div class="col-lg-3 col-md-6 footer-links">
                         <h4>Useful Links</h4>
                         <ul>
                             <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
@@ -103,36 +106,62 @@
                         </ul>
                     </div>
 
-                    
 
-                    <div class="col-lg-4 col-md-6 footer-contact">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
+                        <h5 style="color: cornflowerblue;">USA Address</h5>
+                        
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-danger" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          
                         <p>
                             1301 S Scott street <br>
                             ARLINGTON Virginia 22204<br>
                             United States <br>
-                            <strong>Phone:</strong> +1 571 524 9138<br>
+                            <strong>Phone:</strong> +1 571 524 9138<br><br>
+                            <strong>Email:</strong> info@etechbd.net<br>
                         </p>
+                        
+
+                    </div>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4></h4><br>
+                        <h5 style="color: cornflowerblue;">Bangladesh Address</h5>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                          <div class="spinner-grow text-success" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                        
                         <p>
                             4-B, Level-3,Concept Tower,68-69, <br>
-                            
-                            Green Road Dhanmondi,<br>
-                            Dhaka-1205,Bangladesh <br>
+
+                            Green Road Dhanmondi,
+                            Dhaka-1205,<br>Bangladesh <br>
                             <strong>Phone:</strong> +88 02 9641156<br><br>
                             <strong>Email:</strong> info@etechbd.net<br>
                         </p>
 
                     </div>
 
-                    <div class="col-lg-4 col-md-6 footer-info">
+                    <div class="col-lg-3 col-md-6 footer-info">
                         <h3>About eTech</h3>
                         <p class="text-justify">E-Tech Solutions Ltd is IT Services Company that cost-effectively
                             provides cutting-edge IT Services, focuses on developing innovative software solutions,
                             offering management and testing services to its clients.</p>
                         <div class="social-links mt-3">
                             <a href="https://twitter.com/info2etech" class="twitter"><i class="bx bxl-twitter"></i></a>
-                            <a href="https://www.facebook.com/etechsolutionltd/" class="facebook"><i class="bx bxl-facebook"></i></a>
-                            
+                            <a href="https://www.facebook.com/etechsolutionltd/" class="facebook"><i
+                                    class="bx bxl-facebook"></i></a>
+                            <a href="/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+
                         </div>
                     </div>
 
@@ -145,7 +174,7 @@
                 &copy; Copyright <strong><span>eTech Solution</span></strong>. All Rights Reserved
             </div>
             <div class="credits">
-                  Designed by <a href="/">eTech Solution Limited</a>
+                Designed by <a href="/">eTech Solution Limited</a>
             </div>
         </div>
     </footer><!-- End Footer -->

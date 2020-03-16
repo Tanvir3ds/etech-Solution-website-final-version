@@ -8,9 +8,10 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
+  
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../media/pics/cursol1.jpg" class="d-block w-100" alt="..." height="500px" width="1300px">
+      <img src="../media/pics/cursol1.jpg" class="d-block w-100" alt="..." height="600px" width="1366px">
       <div class="carousel-caption d-none d-md-block" style="scroll-padding-bottom: 40%;">
         <h1>Cyber Security</h1>
         <p>
@@ -21,7 +22,7 @@
 
     {% for carousel in homecarousels %}
     <div class="carousel-item">
-      <img src="{{ carousel.img.url }}" class="d-block w-100" alt="..." height="500px" width="1300px">
+      <img src="{{ carousel.img.url }}" class="d-block w-100" alt="..." height="600px" width="1300px">
       <div class="carousel-caption d-none d-md-block">
         <h1>{{ carousel.title }}</h1>
         <p>
@@ -69,10 +70,58 @@
 
   </section>
   <!--about end section--------------------------------------->
-  <br><br><br>
+  
   {% endfor %}
   <!--about end --------------------------------------->
 
+
+  <!--services home page-->
+  
+  <main id="main">
+
+    <!-- ======= Services Section ======= -->
+    <section class="services">
+      <div class="container">
+        <!-- Page Content Partners -->
+        <h2>Our Services</h2><br>
+        <div class="row">
+          <br><br>
+
+          <div class="row">
+
+
+
+
+
+            {% for homeservice in homeservices %}
+
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch"  data-aos-delay="200">
+              <div class="icon-box icon-box-blue">
+                <img src="{{homeservice.img.url}}" class="card-img-top" alt="..." height="166px" width="257px">
+
+
+                <h4 class="title"><a href="">{{homeservice.title}}</a></h4>
+                <p class="text-justify">{{homeservice.description}}</p>
+              </div>
+            </div>
+
+            {% endfor %}
+
+
+
+
+
+          </div>
+
+        </div>
+    </section><!-- End Services Section -->
+
+
+
+  </main><!-- End #main -->
+
+
+  <!--services end home page-->
 
 
 
@@ -101,69 +150,43 @@
 
 
       <!-------Partner End---------------------------------------------------->
+
+
+
+      
+
     </div>
+
+
+
+    <!--client start-------------------------------------->
+  <div class="container">
+
+    <!-- Page Content Partners -->
+    <h2>Our Client</h2><br>
+    <div class="row">
+      <br><br>
+
+      {% for homeclient in homeclients %}
+
+
+      <div class="col-sm-2 icon-box icon-box-pink">
+        <img src="{{ homeclient.img.url }}" height="78px" width="137px">
+
+        <p style="margin-left: 20px;">{{ homeclient.name }}</p>
+        <br><br>
+      </div>
+
+
+      {% endfor %}
+
+
+      <!-------client End---------------------------------------------------->
+    </div><!-------container End---------------------------------------------------->
+
+
   </div>
 
-
-
-
-
-
-  <!-------partner sec---------------------------------------------------------------->
-
-
-
-
-
-
-
-
-
-
-
-
-  <main id="main">
-
-    <!-- ======= Services Section ======= -->
-    <section class="services">
-      <div class="container">
-        <!-- Page Content Partners -->
-        <h2>Our Services</h2><br>
-        <div class="row">
-          <br><br>
-
-          <div class="row">
-
-
-
-
-
-            {% for homeservice in homeservices %}
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon-box icon-box-blue">
-                <img src="{{homeservice.img.url}}" class="card-img-top" alt="..." height="166px" width="257px">
-
-
-                <h4 class="title"><a href="">{{homeservice.title}}</a></h4>
-                <p class="text-justify">{{homeservice.description}}</p>
-              </div>
-            </div>
-
-            {% endfor %}
-
-
-
-
-
-          </div>
-
-        </div>
-    </section><!-- End Services Section -->
-
-
-
-  </main><!-- End #main -->
-
+</div>
 
   {% endblock %}
