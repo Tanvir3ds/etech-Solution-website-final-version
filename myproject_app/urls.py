@@ -10,6 +10,8 @@ urlpatterns = [
     path('blogview/<id>/', views.blogview, name= 'blogview'),
     path('contact', views.contact, name= 'contact'),
     path('blog/category', views.getCategory, name="category"),
-    path('message', views.ClientMessage, name="message")
+    path('message', views.ClientMessage, name="message"),
+    path('serviceview/<id>/', views.serviceview, name= 'serviceview'),
+
   
 ]

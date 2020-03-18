@@ -29,6 +29,7 @@
 
             <div class="row">
                 {% for service in services %}
+                <a href="{% url 'serviceview' service.id %}">
 
 
                 <div class="col-md-6 col-lg-4 d-flex align-items-stretch"  data-aos-delay="200">
@@ -38,6 +39,7 @@
                         <p class="description">{{service.description}}</p>
                     </div>
                 </div>
+            </a>
                 {% endfor %}
 
             </div>

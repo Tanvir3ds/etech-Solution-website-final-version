@@ -85,3 +85,10 @@ def ClientMessage(request):
         
     return render(request, "contact.html",)
 
+
+def serviceview(request, id):
+    
+    service=Services.objects.get(pk=id)
+
+    
+    return render(request, "singleservice.html",{'service':service})

@@ -11,7 +11,7 @@
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="../media/pics/cursol1.jpg" class="d-block w-100" alt="..." height="600px" width="1366px">
+      <img src="../static/assets/img/hero-bg.jpg" class="d-block w-100" alt="..." height="600px" width="1366px">
       <div class="carousel-caption d-none d-md-block" style="scroll-padding-bottom: 40%;">
         <h1>Cyber Security</h1>
         <p>
@@ -61,7 +61,7 @@
     <div class="container">
       <div class=" d-flex align-items-stretch">
         <div class="icon-box icon-box-pink">
-          <h4 class="title"><a href="">{{ homeabout.title }}</a></h4>
+          <h4 class="title"><a href="{% url 'about' %}">{{ homeabout.title }}</a></h4>
           <p class="description">{{ homeabout.description }}</p>
 
         </div>
@@ -83,32 +83,31 @@
     <section class="services">
       <div class="container">
         <!-- Page Content Partners -->
-        <h2>Our Services</h2><br>
+        <a href="{% url 'services' %}" >
+          <h2 >Our Services</h2><br>
+        </a>
+        
         <div class="row">
-          <br><br>
+          
 
           <div class="row">
 
-
-
-
-
             {% for homeservice in homeservices %}
+            <a href="/" >
+            
+            
 
             <div class="col-md-6 col-lg-3 d-flex align-items-stretch"  data-aos-delay="200">
               <div class="icon-box icon-box-blue">
                 <img src="{{homeservice.img.url}}" class="card-img-top" alt="..." height="166px" width="257px">
 
 
-                <h4 class="title"><a href="">{{homeservice.title}}</a></h4>
+                <h4 class="title"><a href=""></a>{{homeservice.title}}</a></h4>
                 <p class="text-justify">{{homeservice.description}}</p>
               </div>
             </div>
-
+          </a>
             {% endfor %}
-
-
-
 
 
           </div>
