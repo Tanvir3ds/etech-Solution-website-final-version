@@ -76,12 +76,12 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'etechbd',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'etechbdltd_db',
+        'USER': 'root',
+        'PASSWORD': '',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '3306',
     }
 }
 
