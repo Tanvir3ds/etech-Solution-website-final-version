@@ -9,6 +9,7 @@ from django.db.models import Q
 
 # Create your views here.
 
+
 def home(request):
     homecarousels = HomeCarousel.objects.all()
     homeabouts = HomeAbout.objects.all()
@@ -53,12 +54,6 @@ def contact(request):
 
 
 
-def blogview(request, id):
-    
-    blog=Blog.objects.get(pk=id)
-
-    
-    return render(request, "singleblog.html",{'blog':blog})
 
 def getCategory(request):
 
@@ -92,3 +87,18 @@ def serviceview(request, id):
 
     
     return render(request, "singleservice.html",{'service':service})
+
+
+
+def blogview(request, slug):
+ 
+    q = Blog.objects.filter(slug__iexact=slug)
+    if q.exists():
+        q = q.first()
+    else:
+        return HttpResponse('<h1>Post Not Found</h1>')
+    context = {
+
+        'blog': q
+    }
+    return render(request, 'singleblog.html', context)
